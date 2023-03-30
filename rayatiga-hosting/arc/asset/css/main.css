@@ -1,0 +1,517 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+/* Root */
+* {
+    /* Zeroing Margin and Padding */
+    margin: 0;
+    padding: 0;
+    /* Color */
+    --light: #fcfcfc;
+    --gray: #9c9c9c;
+    --dark: #2c2c2c;
+    --lightgray: #cccccc;
+    --light-accent: #f0f0f0;
+    --pink-purple: #9b198a;
+    /* Size */
+    /* Absolute */
+    --absolute-0: 0;
+    --absolute-0h5: 0.5;
+    --absolute-1: 1;
+    --absolute-100: 100;
+    /* REM */
+    --rem-0: 0rem;
+    --rem-0h1: 0.1rem;
+    --rem-0h25: 0.25rem;
+    --rem-0h5: 0.5rem;
+    --rem-0h7: 0.7rem;
+    --rem-1: 1rem;
+    --rem-1h25: 1.25rem;
+    --rem-1h5: 1.5rem;
+    --rem-1h75: 1.75rem;
+    --rem-2: 2rem;
+    --rem-3h125: 3.125rem;
+    --rem-5: 5rem;
+    --rem-7: 7rem;
+    --rem-10: 10rem;
+    --rem-15: 15rem;
+    --rem-25: 25rem;
+    /* VH */
+    --vh-100: 100vh;
+    /* Percent */
+    --percent-100: 100%;
+    --percent-container: 75%;
+    --percent-pricing-container: 90%;
+    /* Weight */
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-700: 700;
+    /* Negative */
+    --negative: -1;
+    /* Time */
+    /* Second */
+    --second-0h15: 0.15s;
+    --second-0h25: 0.25s;
+    --second-0h3: 0.3s;
+    --second-0h45: 0.45s;
+}
+*::selection {
+    color: var(--light);
+    background-color: var(--dark);
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Body */
+body {
+    background-color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+}
+/* Navigation */
+nav {
+    display: flex;
+    position: fixed;
+    height: var(--rem-5);
+    top: var(--absolute-0);
+    left: var(--absolute-0);
+    justify-content: center;
+    right: var(--absolute-0);
+    z-index: var(--absolute-100);
+    background-color: var(--light);
+    border-bottom: var(--rem-0h1) solid var(--lightgray);
+}
+/* Navigation Container */
+nav .container {
+    display: inherit;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--percent-container);
+}
+/* Navigation Unordered List */
+nav ul {
+    display: inherit;
+    list-style: none;
+    gap: var(--rem-1);
+}
+/* Navigation List Anchor */
+nav ul li a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: var(--second-0h25);
+}
+/* Navigation List Anchor Hover */
+nav ul li a:hover {
+    color: var(--dark);
+}
+/* Navigation Title */
+nav ul li a.title {
+    color: var(--dark);
+    font-size: var(--rem-1h25);
+    font-weight: var(--weight-700);
+}
+/* Navigation Button */
+nav .button {
+    color: var(--light);
+    text-decoration: none;
+    background-color: var(--dark);
+    border-radius: var(--rem-0h25);
+    padding: var(--rem-0h5) var(--rem-1);
+}
+/* Navigation Anchor Active */
+nav ul li a.active {
+    color: var(--dark);
+}
+/* Navigation Hamburger Menu */
+nav .hamburger-menu {
+    display: none;
+}
+/* Main */
+main {
+    display: flex;
+    align-items: center;
+    height: var(--vh-100);
+    justify-content: center;
+}
+/* Main Container */
+main .container {
+    display: inherit;
+    gap: var(--rem-1);
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: var(--percent-container);
+}
+/* Main Heading Span */
+main h1 span {
+    font-weight: var(--weight-300);
+}
+/* Main Paragraph */
+main p {
+    line-height: var(--rem-1h5);
+}
+/* Main Button */
+main .button {
+    cursor: pointer;
+    color: var(--light);
+    text-decoration: none;
+    background-color: var(--dark);
+    border-radius: var(--rem-0h25);
+    padding: var(--rem-0h5) var(--rem-1);
+}
+/* Media Query */
+/* Screen Size Max Width 1190px */
+@media (max-width: 1190px) {
+    /* Container Width */
+    * {
+        --percent-container: 90%;
+    }
+}
+/* Screen Size Max Width 835px */
+@media (max-width: 835px) {
+    /* Navigation Menu */
+    nav ul:nth-child(2) {
+        display: inherit;
+        gap: var(--rem-2);
+        position: absolute;
+        text-align: center;
+        width: var(--rem-10);
+        height: var(--vh-100);
+        flex-direction: column;
+        transition: var(--second-0h25);
+        top: var(--percent-100);
+        padding: var(--rem-2) var(--rem-0);
+        background-color: var(--light-accent);
+        right: calc(var(--percent-100) * var(--negative));
+        border-top: var(--rem-0h1) solid var(--lightgray);
+        border-left: var(--rem-0h1) solid var(--lightgray);
+    }
+    /* Navigation Button */
+    nav .button {
+        background: none;
+        color: var(--gray);
+        padding: var(--absolute-0);
+    }
+    /* Navigation Hamburger Menu */
+    nav .hamburger-menu {
+        display: flex;
+        cursor: pointer;
+        gap: var(--rem-0h25);
+        flex-direction: column;
+    }
+    /* Navigation Hamburger Design */
+    nav .hamburger-menu span {
+        width: var(--rem-1h75);
+        height: var(--rem-0h25);
+        border-radius: var(--rem-1);
+        background-color: var(--dark);
+    }
+    /* Navigation Hamburger Active */
+    nav ul:nth-child(2).hamburger-active {
+        right: 0;
+    }
+}
+/* Screen Size Max Width 425px */
+@media (max-width: 425px) {
+    /* Main Heading */
+    main h1 {
+        font-size: var(--rem-1h5);
+    }
+}
+/* Screen Size Min Width 835px */
+@media (min-width: 835px) {
+    /* Navigation Button Text Hover */
+    nav a.button:hover {
+        color: var(--light-accent);
+    }
+    /* Navigation Button Text Active */
+    nav a.button.active {
+        color: var(--light-accent);
+    }
+}
+/* Intended for pricing.html Page */
+/* Main Pricing */
+main.pricing {
+    height: max-content;
+    flex-direction: column;
+}
+/* Main Pricing HR */
+main.pricing hr {
+    border-top: var(--rem-0h1) solid var(--lightgray);
+    width: var(--percent-pricing-container);
+}
+/* Main Pricing header Container */
+main.pricing .pricing-header {
+    display: flex;
+    gap: var(--rem-1);
+    text-align: center;
+    align-items: center;
+    height: var(--vh-100);
+    flex-direction: column;
+    justify-content: center;
+    width: var(--percent-pricing-container);
+}
+/* Main Span ID */
+main.pricing span#domain {
+    height: var(--rem-5);
+    margin-top: calc(var(--rem-5) * var(--negative));
+}
+/* Main Pricing Container */
+main.pricing .pricing-container {
+    display: flex;
+    gap: var(--rem-1);
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--rem-5);
+    width: var(--percent-pricing-container);
+}
+/* Main Pricing Last Container */
+main.pricing .pricing-container:nth-last-child(1) {
+    padding-bottom: var(--rem-5);
+}
+/* Main Pricing Image */
+main.pricing a img {
+    cursor: pointer;
+    width: var(--rem-2);
+    height: var(--rem-2);
+    opacity: var(--absolute-0h5);
+    border-radius: var(--rem-0h25);
+    border: var(--rem-0h1) solid var(--gray);
+}
+/* Main Pricing Card Container */
+main.pricing .card-container {
+    flex-wrap: wrap;
+    display: inherit;
+    gap: var(--rem-1);
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+/* Main Pricing Card has Sub */
+main.pricing .card:has(sub) {
+    border: var(--rem-0h1) solid var(--pink-purple);
+}
+/* Main Pricing Button has Sub */
+main.pricing .card:has(sub) .button {
+    border: var(--rem-0h1) solid var(--pink-purple);
+}
+/* Main Pricing Hover Button has Sub */
+main.pricing .card:has(sub) .button:hover {
+    background-color: var(--pink-purple);
+}
+/* Main Pricing Card */
+main.pricing .card {
+    display: inherit;
+    text-align: left;
+    width: var(--rem-15);
+    flex-direction: column;
+    border-radius: var(--rem-0h25);
+    padding: var(--rem-1h5) var(--rem-2);
+    border: var(--rem-0h1) solid var(--gray);
+}
+/* Main Pricing Card Sub */
+main.pricing .card sub {
+    display: inherit;
+    gap: var(--rem-0h25);
+    margin-bottom: var(--rem-0h25);
+}
+/* Main Pricing Card Heading 1 */
+main.pricing .card h1 {
+    font-size: var(--rem-1);
+    font-weight: var(--weight-400);
+}
+/* Main Pricing Card Heading 2 */
+main.pricing .card h2 {
+    font-size: var(--rem-2);
+    font-weight: var(--weight-700);
+    margin: var(--rem-0h5) var(--absolute-0);
+}
+/* Main Pricing Card H2 Span */
+main.pricing .card h2 span {
+    font-size: var(--rem-1);
+    font-weight: var(--weight-400);
+}
+/* Main Pricing Card Unordered List */
+main.pricing .card ul {
+    list-style: none;
+    text-align: left;
+}
+/* Main Pricing Card List */
+main.pricing .card li {
+    display: flex;
+    gap: var(--rem-0h5);
+    margin: var(--rem-0h7) var(--absolute-0);
+}
+/* Main Pricing Card First List */
+main.pricing .card li:nth-child(1) {
+    font-weight: var(--weight-700);
+}
+/* Main Pricing Card Icon Image */
+main.pricing .card img {
+    width: var(--rem-1);
+    height: var(--rem-1);
+}
+/* Main Pricing Card Button */
+main.pricing .card .button {
+    background: none;
+    color: var(--dark);
+    text-align: center;
+    margin-top: var(--rem-0h5);
+    transition: var(--second-0h25);
+    border: var(--rem-0h1) solid var(--gray);
+}
+/* Main Pricing Card Button Hover */
+main.pricing .card .button:hover {
+    color: var(--light);
+    background: var(--dark);
+}
+/* Main Pricing Card List Disabled */
+main.pricing .card li.disabled {
+    opacity: var(--absolute-0h5);
+}
+/* Modal */
+/* Modal Background */
+.modal {
+    display: none;
+    overflow: auto;
+    position: fixed;
+    animation: fadeIn;
+    align-items: center;
+    top: var(--absolute-0);
+    left: var(--absolute-0);
+    justify-content: center;
+    width: var(--percent-100);
+    height: var(--percent-100);
+    z-index: var(--absolute-100);
+    animation-duration: var(--second-0h25);
+    background-color: rgba(var(--absolute-0), var(--absolute-0), var(--absolute-0), var(--absolute-0h5));
+}
+/* Modal Opened */
+.modal.modal-open {
+    display: flex;
+}
+/* Modal Content */
+.modal-content {
+    display: inherit;
+    gap: var(--rem-1);
+    height: max-content;
+    align-items: center;
+    width: var(--rem-25);
+    margin: var(--rem-1);
+    flex-direction: column;
+    border-radius: var(--rem-0h25);
+    background-color: var(--light);
+    padding: var(--rem-1h5) var(--rem-1);
+    border: var(--rem-0h1) solid var(--gray);
+}
+/* Modal Title */
+.modal-content h2 {
+    text-align: center;
+}
+/* Modal Title for Mobile */
+@media (max-width: 425px) {
+    .modal-content h2 {
+        font-size: var(--rem-1h25);
+    }
+}
+/* Modal Separation */
+.modal-content hr {
+    width: var(--percent-100);
+    border-top: var(--rem-0h1) solid var(--lightgray);
+}
+/* Modal List */
+.modal-content ul {
+    display: inherit;
+    color: var(--dark);
+    gap: var(--rem-0h5);
+    flex-direction: inherit;
+    padding-left: var(--rem-2);
+}
+/* Modal Mark */
+.modal-content mark {
+    color: var(--pink-purple);
+    background-color: transparent;
+    font-weight: var(--weight-500);
+}
+/* Close Button */
+.close {
+    text-align: center;
+    font-size: var(--rem-1);
+    margin-top: var(--rem-0h25);
+    border-radius: var(--rem-0h25);
+    background-color: var(--lightgray);
+    padding: var(--rem-0h5) var(--rem-1);
+}
+/* Checkout Button */
+.checkout {
+    text-align: center;
+    color: var(--light);
+    text-decoration: none;
+    font-size: var(--rem-1);
+    margin-top: var(--rem-0h25);
+    background-color: var(--dark);
+    border-radius: var(--rem-0h25);
+    padding: var(--rem-0h5) var(--rem-1);
+}
+/* Close Button Hover */
+.close:hover {
+    cursor: pointer;
+    background-color: var(--gray);
+}
+.close.checkout:hover {
+    color: var(--light-accent);
+    background-color: var(--dark);
+}
+/* Keyframe */
+/* Animation Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Intended for File Inside Archive Folder */
+/* Define Circle Loop */
+.circle-loop {
+    position: relative;
+    width: var(--rem-5);
+    height: var(--rem-5);
+}
+/* Positioning Circle Loop */
+.circle-loop div {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    margin: var(--rem-0h5);
+    width: var(--rem-3h125);
+    height: var(--rem-3h125);
+    border-radius: var(--percent-100);
+    border: var(--rem-0h5) solid var(--dark);
+    border-color: var(--dark) transparent transparent transparent;
+    animation: circle-loop 1.2s
+        cubic-bezier(var(--absolute-0h5), var(--absolute-0), var(--absolute-0h5), var(--absolute-1)) infinite;
+}
+/* Circle Loop First Div */
+.circle-loop div:nth-child(1) {
+    animation-delay: calc(var(--second-0h45) * var(--negative));
+}
+/* Circle Loop Second Div */
+.circle-loop div:nth-child(2) {
+    animation-delay: calc(var(--second-0h3) * var(--negative));
+}
+/* Circle Loop Third Div */
+.circle-loop div:nth-child(3) {
+    animation-delay: calc(var(--second-0h15) * var(--negative));
+}
+/* Circle Loop Keyframe */
+@keyframes circle-loop {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
